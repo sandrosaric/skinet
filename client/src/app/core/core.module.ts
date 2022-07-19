@@ -6,6 +6,8 @@ import { TestErrorComponent } from './test-error/test-error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SectionHeaderComponent } from './section-header/section-header.component';
+import { BreadcrumbComponent, BreadcrumbModule } from 'xng-breadcrumb';
 
 
 
@@ -15,7 +17,8 @@ import { ToastrModule } from 'ngx-toastr';
     NavBarComponent,
     TestErrorComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    SectionHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -23,10 +26,12 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot({
       preventDuplicates:true,
       positionClass:"toastr-bottom-right"
-    })
+    }),
+    BreadcrumbModule
   ],
   exports:[
-    NavBarComponent
+    NavBarComponent,
+    SectionHeaderComponent
   ]
 })
 export class CoreModule { }
