@@ -22,6 +22,8 @@ namespace API.Helpers
                 opt.MapFrom<ProductUrlRespolver>();
             });
             CreateMap<Address,AddressDto>().ReverseMap();
+                        CreateMap<CustomerBasketDto, CustomerBasket>();
+            CreateMap<BasketItemDto, BasketItem>();
         }
     }
 }
