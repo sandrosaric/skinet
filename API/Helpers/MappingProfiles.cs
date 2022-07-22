@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
+using Core.Entities.Identity;
 
 namespace API.Helpers
 {
@@ -20,6 +21,7 @@ namespace API.Helpers
             .ForMember(dest => dest.PictureUrl,opt => {
                 opt.MapFrom<ProductUrlRespolver>();
             });
+            CreateMap<Address,AddressDto>().ReverseMap();
         }
     }
 }
