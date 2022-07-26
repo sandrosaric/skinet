@@ -12,6 +12,8 @@ import { ErrorInterceptor } from './core/interceptors/error-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { BasketModule } from './basket/basket.module';
+import { AccountModule } from './account/account.module';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { BasketModule } from './basket/basket.module';
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
-    BasketModule
+    BasketModule,
+    AccountModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor,multi:true},
