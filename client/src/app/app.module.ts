@@ -13,6 +13,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { BasketModule } from './basket/basket.module';
 import { AccountModule } from './account/account.module';
+import {CdkStepperModule} from '@angular/cdk/stepper/';
+import { JwtInterceptor } from './core/interceptors/jwt-interceptor';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { AccountModule } from './account/account.module';
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })
